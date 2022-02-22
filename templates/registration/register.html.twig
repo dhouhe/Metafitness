@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+    
+{% block body %}
+    <!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="{{asset ('formulaire/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css')}}">
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{{asset ('formulaire/css/style.css')}}">
+    <div class="wrapper" style="background-image: url('images/bg-registration-form-2.jpg');">
+    <div class="inner">
+    
+    <div class="form-wrapper">
+    
+                    <h3>Registration Form</h3>
+					{{ form_start(registrationForm) }}
+                    
+                    {{ form_row(registrationForm.FirstName) }}
+                   {{ form_row(registrationForm.lastName) }}
+                    {{ form_row(registrationForm.email) }}
+                    {{ form_row(registrationForm.plainPassword, {
+                      label: 'Password'
+                         }) }}
+                          
+                    {{ form_row(registrationForm.agreeTerms) }}
+                    <button type="submit" class="contact-form-btn">Inscription</button>
+                      
+                    {{ form_end(registrationForm) }}
+                </div>        
+             </div>
+				
+
+{% endblock %}
